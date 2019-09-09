@@ -1,0 +1,110 @@
+include components/Title/Title.pug
+include components/TextField/TextField.pug
+include components/Dropdown/Dropdown.pug
+include components/Button/Button.pug
+include components/RoomAdvantage/RoomAdvantage.pug
+include components/RadioButtons/RadioButtons.pug
+include components/Toggle/Toggle.pug
+include components/LikeButton/LikeButton.pug
+include components/Feedback/Feedback.pug
+include components/BulletList/BulletList.pug
+include components/Datepicker/Datepicker.pug
+include components/DateDropdown/DateDropdown.pug
+include components/DatepickerDropdowns/DatepickerDropdowns.pug
+include components/SearchRooms/SearchRooms.pug
+include components/Booking/Booking.pug
+include components/Registration/Registration.pug
+include components/SignIn/SignIn.pug
+include components/Logo/Logo.pug
+include components/Header/Header.pug
+include components/Footer/Footer.pug
+include components/PieChart/PieChart.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png")
+    link(rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="theme-color" content="#ffffff")
+    title room detail
+  body
+    .page-content
+      +header()
+      .room-details
+        section.room-details__top-images-wrap
+          img.room-details__big-img(src="/assets/img/room-details1.jpg", alt="room img")
+          .room-details__small-img-wrap
+            img.room-details__small-img(src="/assets/img/room-details3.jpg", alt="room img")
+            img.room-details__small-img(src="/assets/img/room-details2.jpg", alt="room img")
+        section.room-details__content
+          .room-details__content-row
+            .room-details__content-left
+              .room-details__advantages-wrap
+                +title({ content: 'Сведения о номере', tag: 'h2', addClass: 'room-details__advantages-title'})
+                .room-details__advantages-item
+                  +roomAdvantage({
+                    title: 'Комфорт',
+                    content: 'Шумопоглощающие стены',
+                    icon: 'icon-emoticon',
+                  })
+                .room-details__advantages-item
+                  +roomAdvantage({
+                    title: 'Удобство',
+                    content: 'Окно в каждой из спален',
+                    icon: 'icon-location-city',
+                  })
+                .room-details__advantages-item
+                  +roomAdvantage({
+                    title: 'Уют',
+                    content: 'Номер оснащён камином',
+                    icon: 'icon-fire',
+                  })
+              .room-details__pie-chart
+                +pieChart({
+                  title: 'Впечатления от номера',
+                  magnificentlyNum: 130,
+                  goodNum: 65,
+                  normNum: 65,
+                  badNum: 0,
+                })
+              .room-details__feedbacks-wrap
+                .room-details__feedbacks-title
+                  +title({ content: 'Отзывы посетителей номера', tag: 'h2'})
+                  .room-details__feedbacks-title-num 2 отзыва
+                .room-details__feedbacks-item
+                  +feedback({
+                    photoSrc: '/assets/img/murad.png',
+                    name: 'Мурад Сарафанов',
+                    date: '5 дней назад',
+                    description: 'Великолепный матрас на кровати в основной спальне! \
+                                  А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. \
+                                  Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                })
+                .room-details__feedbacks-item
+                  +feedback({ 
+                    photoSrc: '/assets/img/pat.png',
+                    name: 'Патрисия Стёклышкова',
+                    date: 'Неделю назад',
+                    description: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую \
+                                  заказать, каждый день новое блюдо и десерт как комплимент'
+                  })
+              .room-details__bullet-list
+                +bulletList({
+                  addClass: '',
+                  title: 'Правила', 
+                  items: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+                })
+              .room-details__cancellation
+                .room-details__cancellation-title
+                  +title({ content: 'Отмена', tag: 'h2' })
+                .room-details__cancellation-content Бесплатная отмена в течение 48 ч. После этого при отмене не позднее 
+                  | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                
+            .room-details__content-right
+              +booking({ roomNum: 888, price: '9 990', lux: true })
+    +footer()

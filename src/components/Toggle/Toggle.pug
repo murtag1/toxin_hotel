@@ -1,0 +1,6 @@
+mixin toggle(options)
+  .toggle(class=options.addClass)
+    input.toggle__input(type="checkbox" id=options.id)
+    label.toggle__inner(for=options.id)
+      .toggle__blob
+    label.toggle__content(for=options.id)= options.content

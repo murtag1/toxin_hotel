@@ -1,0 +1,14 @@
+.rate-button {
+  display: inline-block;
+  &__icon {
+    display: inline-block;
+    width: 24px;
+  }
+  &__icon:before {
+    font-size: rem(20px);
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+  }
+}

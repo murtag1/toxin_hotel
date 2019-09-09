@@ -1,0 +1,44 @@
+mixin filter()
+  .filter
+    .filter__datepicker-wrap
+      +datepickerDropdowns({ numInputs: 1, firstDropdownTitle: 'даты пребывания в отеле' })
+    .filter__dropdown-guests
+      +dropdown({
+        title: 'гости',
+        type: 'guests',
+        items: ['взрослые', 'дети', 'младенцы'],
+        applyButtonContent: 'применить',
+        cleanButtonContent: 'очистить',
+        icon: 'icon-chevron-down'
+      })
+    .filter__slider
+      +slider({
+        addClass: '',
+        title: 'диапазон цены',
+        footnote: 'Стоимость за сутки пребывания в номере'
+      })
+    .filter__checkbox-buttons
+      +checkboxButtons({
+        items: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)'],
+        title: 'checkbox buttons',
+      })
+    .filter__rich-checkbox-buttons
+      +checkboxButtons({
+        items: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист и проводит до номера.'],
+        itemsTitle: ['Широкий коридор', 'Помощник для инвалидов'],
+        title: 'Доступность',
+      })
+    .filter__dropdown-comfort
+      +dropdown({
+        title: 'Удобства',
+        type: 'picking',
+        items: ['спальни', 'кровати', 'ванные комнаты'],
+        applyButtonContent: 'применить',
+        cleanButtonContent: 'очистить',
+        iconClass: 'icon-chevron-down'
+      })
+    +expCheckboxList({
+      items: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь'],
+      title: 'дополнительные удобства',
+      iconClass: 'icon-chevron-down',
+    })

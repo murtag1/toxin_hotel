@@ -1,0 +1,7 @@
+mixin dateDropdown(options)
+  .date-dropdown(class=options.addClass)
+    .date-dropdown__title
+      +title({ content: options.title, tag: 'h3' })
+    input.date-dropdown__input(placeholder='ДД.ММ.ГГГГ')
+    .date-dropdown__icon-wrap
+      i.date-dropdown__icon(class='icon-chevron-down')

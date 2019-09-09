@@ -1,0 +1,14 @@
+mixin slider(options)
+  .slider(class=options.addClass)
+    if (options.title)
+      .slider__title
+        .slider__title-text
+          +title({ content: options.title, tag: 'h3' })
+        .slider__range
+    .slider__body
+      .slider__handle.ui-slider-handle.ui-corner-all.ui-state-default(tabindex=0)
+        .slider__handle-dot
+      .slider__handle.ui-slider-handle.ui-corner-all.ui-state-default(tabindex=0)
+        .slider__handle-dot
+    if (options.footnote)
+      .slider__footnote= options.footnote

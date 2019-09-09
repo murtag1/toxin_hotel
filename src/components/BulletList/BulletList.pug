@@ -1,0 +1,8 @@
+mixin bulletList(options)
+  .bullet-list(class= options.addClass)
+    if (options.title)
+      .bullet-list__title
+        +title({ content: options.title, tag: 'h2' })
+      if (options.items)
+        each val in options.items
+          .bullet-list__item= val

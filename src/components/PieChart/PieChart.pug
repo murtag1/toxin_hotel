@@ -1,0 +1,50 @@
+mixin pieChart(options)
+  - let magnificentlyNum = options.magnificentlyNum ? options.magnificentlyNum : 0
+  - let goodNum = options.goodNum ? options.goodNum : 0
+  - let normNum = options.normNum ? options.normNum : 0
+  - let badNum = options.badNum ? options.badNum : 0
+  - let sum = magnificentlyNum + goodNum + normNum + badNum
+  - magnificentlyNum = 100 * magnificentlyNum / sum
+  - goodNum = 100 * goodNum / sum
+  - normNum = 100 * normNum / sum
+  - badNum = 100 * badNum / sum
+  .pie-chart(class= options.addClass)
+    if (options.title)
+      +title({ content: options.title, tag: 'h2', addClass: 'pie-chart__title'})
+    .pie-chart__chart-wrap
+      .pie-chart__vote
+        .pie-chart__vote-num= sum
+        |голосов
+      svg(viewBox='0 0 42 42')
+        linearGradient(id='linear-gradient-1')
+          stop(offset='0%' stop-color='#919191')
+          stop(offset='100%' stop-color='#3D4975')
+        linearGradient(id='linear-gradient-2')
+          stop(offset='0%' stop-color='#BC9CFF')
+          stop(offset='100%' stop-color='#8BA4F9')
+        linearGradient(id='linear-gradient-3')
+          stop(offset='0%' stop-color='#6FCF97')
+          stop(offset='100%' stop-color='#66D2EA')
+        linearGradient(id='linear-gradient-4')
+          stop(offset='0%' stop-color='#FFE39C')
+          stop(offset='100%' stop-color='#FFBA9C')
+        
+        circle.pie-chart__circle(cx='21' cy='21' r='15.91549430918954' fill='transparent' stroke='url(#linear-gradient-4)'
+              stroke-width='3.5' stroke-dasharray=`${magnificentlyNum ? magnificentlyNum - 0.5 : 0} ${100.5 - magnificentlyNum}` stroke-dashoffset=`${48.25 + 1.5 - badNum - normNum - goodNum}`)
+
+        circle.pie-chart__circle(cx='21' cy='21' r='15.91549430918954' fill='transparent' stroke='url(#linear-gradient-3)'
+              stroke-width='3.5' stroke-dasharray=`${goodNum ? goodNum - 0.5 : 0} ${100.5 - goodNum}` stroke-dashoffset=`${48.75 - badNum - normNum + 1}`)
+
+        circle.pie-chart__circle(cx='21' cy='21' r='16.5' fill='#fff')
+
+        circle.pie-chart__circle(cx='21' cy='21' r='15.91549430918954' fill='transparent' stroke='url(#linear-gradient-2)'
+              stroke-width='3.5' stroke-dasharray=`${normNum ? normNum - 0.5 : 0} ${100.5 - normNum}` stroke-dashoffset=`${49.25 - badNum + 0.5}`)
+
+        
+        circle.pie-chart__circle(cx='21' cy='21' r='15.91549430918954' fill='transparent' stroke='url(#linear-gradient-1)'
+              stroke-width='3.5' stroke-dasharray=`${badNum ? badNum - 0.5 : 0} ${100.5 - badNum}` stroke-dashoffset='49.75')
+    .pie-chart__legend
+      .pie-chart__legend-item.pie-chart__legend-item-magnificently Великолепно
+      .pie-chart__legend-item.pie-chart__legend-item-good Хорошо
+      .pie-chart__legend-item.pie-chart__legend-item-norm Удовлетворительно
+      .pie-chart__legend-item.pie-chart__legend-item-bad Разочарован

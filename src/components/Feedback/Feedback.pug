@@ -1,0 +1,11 @@
+mixin feedback(options)
+  .feedback(class=options.addClass)
+    .feedback__top
+      img.feedback__photo(src=options.photoSrc)
+      .feedback__title
+        .feedback__name= options.name
+        .feedback__date= options.date
+    .feedback__bottom
+      .feedback__like-button
+        +likeButton({ num: 12, icon: 'icon-favorite', isActive: true })
+      .feedback__description= options.description

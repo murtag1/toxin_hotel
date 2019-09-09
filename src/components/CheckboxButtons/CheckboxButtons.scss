@@ -1,0 +1,63 @@
+.checkbox-buttons {
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__item {
+    display: block;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__input {
+    display: none;
+    &:checked + .checkbox-buttons__icon {
+      border: 1px solid $accentColor1;
+      &::before {
+        display: block;
+      }
+    }
+  }
+  &__icon {
+    display: block;
+    border: 1px solid $darkShadeColor25;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-right: 10px;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 8px;
+      border: 2px solid;
+      border-image: linear-gradient(270deg, #BC9CFF 0%, #8BA4F9 100%) 0 0 1 1;
+      transform: rotateZ(-45deg);
+      box-sizing: border-box;
+      position: absolute;
+      top: 3px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: none;
+    }
+  }
+  &__item-content {
+    flex-shrink: 100;
+  }
+  &__item-title {
+    font-family: $mainFont1;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+  &__item-text {
+    flex-shrink: 100;
+    padding-top: 2px;
+    color: $darkShadeColor50;
+    &_small {
+      font-size: rem(12px);
+    }
+  }
+}

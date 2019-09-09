@@ -1,0 +1,34 @@
+.sign-in {
+  max-width: 382px;
+  width: 100%;
+  padding: 40px 30px 35px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: #fff;
+  @media screen and (max-width: $phoneWidth) {
+    max-width: 300px;
+    padding: 20px 10px 20px 10px;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__info {
+    margin-bottom: 22px;
+  }
+  &__sign-in-btn {
+    margin-bottom: 33px;
+    @media screen and (max-width: $phoneWidth) {
+      width: 100%;
+    }
+  }
+  &__create-btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__registration-btn {
+    padding-right: 1px;
+  }
+}

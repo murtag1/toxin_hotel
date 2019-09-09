@@ -1,0 +1,16 @@
+mixin checkboxButtons(options)
+  .checkbox-buttons(class=options.addClass)
+    if (options.title)
+      .checkbox-buttons__title
+        +title({ content: options.title, tag: 'h3' })
+    if (options.items)
+      each val, i in options.items
+        label.checkbox-buttons__item
+          input.checkbox-buttons__input(type='checkbox')
+          .checkbox-buttons__icon
+          if (options.itemsTitle && options.itemsTitle[i])
+            .checkbox-buttons__item-content
+              .checkbox-buttons__item-title= options.itemsTitle[i]
+              .checkbox-buttons__item-text.checkbox-buttons__item-text_small= val
+          else 
+            .checkbox-buttons__item-text= val

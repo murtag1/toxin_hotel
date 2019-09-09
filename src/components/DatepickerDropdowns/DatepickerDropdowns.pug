@@ -1,0 +1,16 @@
+mixin datepickerDropdowns(options)
+  .datepicker-dropdowns
+    if (options.numInputs === 2)
+      .datepicker-dropdowns__first-dropdown
+        +dateDropdown({ title: options.firstDropdownTitle })
+      .datepicker-dropdowns__second-dropdown
+        +dateDropdown({ title: options.secondDropdownTitle })
+    else
+      .datepicker-dropdowns__first-dropdown.datepicker-dropdowns__first-dropdown_full-width
+        +textField( {
+				title: options.firstDropdownTitle,
+				placeholder: 'ДД ММ - ДД MM',
+        icon: 'icon-chevron-down',
+			})
+    .datepicker-dropdowns__datepicker
+      +datepicker({ })

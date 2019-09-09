@@ -1,0 +1,97 @@
+.button {
+	background-color: #fff;
+  font-family: $mainFont1;
+  font-weight: bold;
+	text-transform: uppercase;
+	color: $darkShadeColor50;
+	font-size: rem(12px);
+	border: none;
+	cursor: pointer;
+	height: 40px;
+	padding: 0;
+	position: relative;
+	background-color: #fff;
+	border-radius: 22px;
+	display: inline-block;
+  text-decoration: none;
+  &:before {
+		content: '';
+		display: block;
+		height: calc(100% + 4px);
+		width: calc(100% + 4px);
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		border-radius: 25px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -2px;
+		margin: auto;
+		z-index: 100;
+		display: none;
+	}
+	&__content {
+		position: relative;
+		z-index: 200;
+		background-color: #fff;
+		height: 100%;
+		border-radius: 22px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+    &_padding {
+      padding: 0 17px;
+    }
+	}
+	&__icon {
+		font-size: rem(17px);
+		height: 100%;
+		width: 44px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		z-index: 200;
+  }
+  &_big {
+		width: 318px;
+	}
+	&_small-width {
+		width: 96px;
+  }
+  &_full-width {
+    width: calc(100% - 4px);
+    margin-left: 2px;
+  }
+	&_small-height {
+		height: 30px;
+	}
+	&_purple-color {
+		color: $accentColor1;
+	}
+	&_white-color {
+		color: #fff;
+	}
+	&_border {
+		&:before {
+			display: block;
+		}
+	}
+	&_opacity {
+		&:before {
+			opacity: 0.5;
+		}
+	}
+	&_background {
+		color: #fff;
+		background-color: transparent;
+		.button__content {
+			background-color: transparent;
+		}
+		&:before {
+			display: block;
+		}
+	}
+}

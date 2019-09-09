@@ -1,0 +1,78 @@
+.pie-chart {
+  position: relative;
+  max-width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  &__title {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  &__circle {
+    transform: rotateZ(90deg);
+    transform-origin: 50% 50% 0;
+  }
+  &__chart-wrap {
+    width: 143px;
+    height: 143px;
+    position: relative;
+    margin-left: -11px;
+    margin-right: 33px;
+    @media screen and (max-width: $phoneWidth) {
+      margin-right: 15px;
+    }
+  }
+  &__vote {
+    text-align: center;
+    display: inline-block;
+    color: $accentColor1;
+    font-size: rem(12px);
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-weight: bold;
+    height: 50px;
+    width: 70px;
+  }
+  &__vote-num {
+    font-size: rem(24px);
+    font-family: $mainFont2;
+    font-weight: bold;
+  }
+  &__legend {
+    padding-bottom: 9px;
+  }
+  &__legend-item {
+    color: $darkShadeColor75;
+    margin-bottom: 5.5px;
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      left: -15px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  &__legend-item-magnificently:before {
+    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+  }
+  &__legend-item-good:before {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  }
+  &__legend-item-norm:before {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+  &__legend-item-bad:before {
+    background:  linear-gradient(180deg, #919191 0%, #3D4975 100%);
+  }
+}

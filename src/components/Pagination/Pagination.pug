@@ -1,0 +1,9 @@
+mixin pagination(options)
+  .pagination(class=options.addClass)
+    .pagination__item.pagination__item_active 1
+    .pagination__item 2
+    .pagination__item 3
+    .pagination__item ...
+    .pagination__item= options.maxNum
+    i.pagination__icon(class=options.icon)
+    .pagination__description= options.description

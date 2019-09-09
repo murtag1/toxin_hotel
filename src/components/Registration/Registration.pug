@@ -1,0 +1,36 @@
+mixin registration(options)
+  form.registration(class=options.addClass)
+    .registration__title
+      +title({ content: options.title, tag: 'h1' })
+    .registration__name
+      +textField( { placeholder: 'Имя' })
+    .registration__surname
+      +textField( { placeholder: 'Фамилия' })
+    .registration__sex
+      +radioButtons({ items: ['Мужчина', 'Женщина'], name: 'sex' })
+    .registration__birthday
+      +textField( { title: 'Дата рождения', placeholder: 'ДД.ММ.ГГГГ' })
+    .registration__sign-in-info
+      .registration__email
+        +textField( { title: 'данные для входа в сервис', type: 'email', placeholder: 'Email' })
+      +textField( { placeholder: 'Пароль', type: 'password' })
+    .registration__toggle
+      +toggle({ id: 'registration-toggle', content: 'Получать спецпредложения' })
+    .registration__payment-btn
+      +button({
+        content: 'зарегистрироваться',
+        fontColor: 'purple',
+        isBorder: true,
+        isBackground: true,
+        isFullWidth: true,
+        icon: 'icon-arrow-right'
+      })
+    .registration__sign-in
+      | Уже есть аккаунт на Toxin
+      .registration__sign-in-btn
+        +button({
+        content: 'войти',
+        fontColor: 'purple',
+        isBorder: true,
+        isSmallWidth: true,
+    })

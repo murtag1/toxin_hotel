@@ -1,0 +1,31 @@
+mixin dropdown(options)
+  - let addClass = options.isShort ? 'dropdown_short ' : ''
+  - addClass += options.addClass ? options.addClass : ''
+  .dropdown(class=addClass data-dropdown-type= options.type ? options.type : 'guests')
+    .dropdown__title
+      +title({ content: options.title, tag: 'h3'})
+    button(type='button').dropdown__button
+      .dropdown__button-text= options.title
+      .dropdown__icon-wrap
+        i.dropdown__icon(class='icon-chevron-down')
+    .dropdown__list
+      each val in options.items
+        .dropdown__item(data-num=0)
+          .dropdown__name-item= val
+          .dropdown__change-num
+            .dropdown__minus-btn -
+            .dropdown__item-num 0
+            .dropdown__plus-btn +
+      .dropdown__buttons-wrap
+        if (options.cleanButtonContent)
+          .dropdown__clean-btn
+            +button({
+                content: options.cleanButtonContent,
+              })
+        if (options.applyButtonContent)
+          .dropdown__apply-btn
+            +button({
+              content: options.applyButtonContent,
+              fontColor: 'purple'
+            })
+      

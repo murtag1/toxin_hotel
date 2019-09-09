@@ -1,0 +1,46 @@
+mixin booking(options)
+  form.booking
+    .booking__top
+      .booking__room №
+        span.booking__room-num= options.roomNum
+        if (options.lux)
+          span.booking__lux  люкс
+      .booking__price
+        span.booking__price-num= `${options.price}₽ `
+        | в сутки
+    .booking__datepicker-wrap
+      +datepickerDropdowns({ numInputs: 2, firstDropdownTitle: 'прибытие', secondDropdownTitle: 'выезд' })
+    .booking__dropdown
+      +dropdown({
+        title: 'гости',
+        type: 'guests',
+        items: ['взрослые', 'дети', 'младенцы'],
+        applyButtonContent: 'применить',
+        cleanButtonContent: 'очистить',
+        icon: 'icon-chevron-down'
+      })
+    .booking__price-info
+      .booking__price-info-item
+        .booking__price-info-item-left= `${options.price}₽ х 4 суток`
+        .booking__price-info-item-right 39 960₽
+      .booking__price-info-item
+        .booking__price-info-item-left Сбор за услуги: скидка 2 179₽
+          .booking__note(title='title') i
+        .booking__price-info-item-right 0₽
+      .booking__price-info-item
+        .booking__price-info-item-left Сбор за дополнительные услуги
+          .booking__note(title='title') i
+        .booking__price-info-item-right 300₽
+      .booking__total-price
+        .booking__total-price-left Итого
+        .booking__total-price-right 38 081₽
+    .booking__button
+      +button({ 
+        content: 'забронировать',
+        fontColor: 'purple',
+        isBorder: true,
+        isBig: true,
+        isBackground: true,
+        isFullWidth: true,
+        icon: 'icon-arrow-right',
+      })

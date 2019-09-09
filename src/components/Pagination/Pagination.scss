@@ -1,0 +1,37 @@
+.pagination {
+  max-width: 241px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &__item {
+    font-size: rem(12px);
+    color: $darkShadeColor50;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+    &_active {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      color: #fff;
+    }
+  }
+  &__icon {
+    font-size: rem(17px);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+  }
+  &__description {
+    color: $darkShadeColor75;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+  }
+}

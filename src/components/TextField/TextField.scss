@@ -1,0 +1,51 @@
+.text-field {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+  &_short {
+    max-width: 260px;
+  }
+  &__title-wrap {
+    margin-bottom: 5px;
+  }
+  &__input {
+    font-family: $mainFont1;
+    font-size: rem(14px);
+    box-sizing: border-box;
+    border: 1px solid $darkShadeColor25;
+    border-radius: 4px;
+    color: $darkShadeColor75;
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: 44px;
+    padding: 0 15px;
+    outline: none;
+    &:focus, &:hover {
+      border: 1px solid $darkShadeColor50;
+    }
+    &::placeholder {
+      color: $darkShadeColor25;
+      font-family: $mainFont1;
+      font-size: 14px;
+    }
+  }
+  &__icon {
+    font-size: rem(17px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 44px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $accentColor1;
+    &_down {
+      font-size: rem(8px);
+      color: $darkShadeColor50;
+    }
+  }
+}

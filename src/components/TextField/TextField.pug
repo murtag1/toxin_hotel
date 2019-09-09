@@ -1,0 +1,13 @@
+mixin textField(options)
+  - let addClass = options.short ? 'text-field_short ' : ''
+  - addClass += options.dateMask ? 'text-field_date-mask ' : ''
+  - addClass += options.addClass ? options.addClass : ''
+  .text-field(class=addClass)
+    if (options.title)
+      .text-field__title-wrap
+        +title({ tag: 'h3', content: options.title})
+    input.text-field__input(type= options.type ? options.type : 'text' placeholder= options.placeholder)
+    if (options.icon === 'icon-chevron-down')
+      i.text-field__icon(class='icon-chevron-down text-field__icon_down')
+    if (options.icon === 'icon-arrow-right')
+      i.text-field__icon(class='icon-arrow-right')

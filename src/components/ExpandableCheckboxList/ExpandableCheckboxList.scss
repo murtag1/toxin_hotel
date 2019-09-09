@@ -1,0 +1,38 @@
+.exp-checkbox-list {
+  max-width: 266px;
+  position: relative;
+  &__button {
+    height: 44px;
+    line-height: 44px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 3px;
+  }
+  &__icon-wrap {
+    width: 48px;
+    height: 44px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: $darkShadeColor50;
+    transition: .2s linear;
+    font-size: rem(8px);
+    &_active {
+      transform: rotateX(180deg)
+    }
+  }
+  &__list {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    &_active {
+      display: block;
+    }
+  }
+}

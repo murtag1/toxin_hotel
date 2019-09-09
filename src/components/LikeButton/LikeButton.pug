@@ -1,0 +1,6 @@
+mixin likeButton(options)
+  - let addClass = options.isActive ? 'like-button_active ' : ''
+  - addClass += options.addClass ? options.addClass : ''
+  button.like-button(class=addClass)
+    i.like-button__icon(class=options.icon)
+    .like-button__num= options.num

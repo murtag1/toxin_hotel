@@ -1,0 +1,61 @@
+.slider {
+  max-width: 266px;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 23px;
+  }
+  &__range {
+    font-size: rem(12px);
+    color: $darkShadeColor50;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  &__title-text {
+    display: inline-block;
+  }
+  &__body {
+    height: 6px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid $darkShadeColor25;
+    position: relative;
+  }
+  &__handle {
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    outline: none;
+    z-index: 100;
+  }
+  &__handle-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    left: -6px;
+  }
+  .ui-slider-range {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    height: 100%;
+    border-top: 1px solid #6FCF97;
+    border-bottom: 1px solid #66D2EA;
+    position: absolute;
+    top: -1px;
+  }
+  &__footnote {
+    font-size: rem(12px);
+    color: $darkShadeColor50;
+    margin-top: 14px;
+  }
+}

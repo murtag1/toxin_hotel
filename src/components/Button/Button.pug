@@ -1,0 +1,28 @@
+mixin button(options)
+  - let addClass;
+    case options.fontColor
+      when 'purple'
+        - addClass = 'button_purple-color '
+      when 'white'
+        - addClass = 'button_white-color '
+      default
+        - addClass = ''
+  - addClass += options.isBorder ? 'button_border ' : ''
+  - addClass += options.isBig ? 'button_big ' : ''
+  - addClass += options.isBackground ? 'button_background ' : ''
+  - addClass += options.isSmallHeight ? 'button_small-height ' : ''
+  - addClass += options.isSmallWidth ? 'button_small-width ' : ''
+  - addClass += options.isFullWidth ? 'button_full-width ' : ''
+  - addClass += options.addClass ? options.addClass : ''
+
+  - let addClassToContent = options.isPadding ? 'button__content_padding ' : ''
+  if (options.src)
+    a.button(class=addClass href=options.src)
+      .button__content(class=addClassToContent)= options.content
+      if (options.icon)
+        i.button__icon(class=options.icon)
+  else
+    button.button(class=addClass type= options.type ? options.type : 'button')
+      .button__content(class=addClassToContent)= options.content
+      if (options.icon)
+        i.button__icon(class=options.icon)

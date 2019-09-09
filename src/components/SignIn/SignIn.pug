@@ -1,0 +1,26 @@
+mixin signIn(options)
+  form.sign-in(class=options.addClass)
+    .sign-in__title
+      +title({ content: options.title, tag: 'h1' })
+    .sign-in__info
+      .registration__email
+        +textField( { type: 'email', placeholder: 'Email' })
+      +textField( { placeholder: 'Пароль', type: 'password' })
+    .sign-in__sign-in-btn
+      +button({ 
+        content: 'войти',
+        fontColor: 'purple',
+        isBorder: true,
+        isBackground: true,
+        isFullWidth: true,
+        icon: 'icon-arrow-right'
+      })
+    .sign-in__create-btn-wrap
+      | Нет аккаунта на Toxin?
+      .sign-in__registration-btn
+        +button({ 
+        content: 'создать',
+        fontColor: 'purple',
+        isBorder: true,
+        isSmallWidth: true,
+    })

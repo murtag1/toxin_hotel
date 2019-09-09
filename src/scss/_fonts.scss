@@ -1,0 +1,6 @@
+@import 'mixins/font-face';
+
+@include font-face('montserrat', '/assets/fonts/Montserrat-Bold/Montserrat-Bold', bold);
+@include font-face('montserrat', '/assets/fonts/Montserrat-Regular/Montserrat-Regular');
+@include font-face('quicksand', '/assets/fonts/Quicksand-Bold/Quicksand-Bold', bold);
+@include font-face('fontello', '/assets/fonts/icons/fontello');

@@ -1,0 +1,168 @@
+@import 'hamburgers/hamburgers.scss';
+
+.header {
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px $darkShadeColor5;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  @media screen and (max-width: $smDesktopWidth) {
+    height: 50px;
+    padding: 0 10px 0 0;
+  }
+  @media screen and (max-width: $desktopWidth) {
+    padding: 0 10px;
+  }
+  &__inner {
+    position: relative;
+    max-width: $desktopWidth;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo {
+    @media screen and (max-width: $smDesktopWidth) {
+      margin-left: 10px;
+    }
+  }
+  &__inner-right, &__inner-left {
+    display: flex;
+    align-items: center;
+  }
+  &__inner-right {
+    background-color: #fff;
+  }
+  &__inner-left {
+    justify-content: flex-start;
+  }
+  &__nav {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    margin-right: 11px;
+    background-color: #fff;
+    transition: .3s linear;
+    @media screen and (max-width: $smDesktopWidth) {
+      position: absolute;
+      z-index: 10000;
+      left: -300px;
+      top: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 20px;
+      background-color: #f4f4f5;
+    }
+    &.active {
+      left: 0;
+    }
+  }
+  &__buttons {
+    display: flex;
+  }
+  &__nav-item {
+    position: relative;
+    margin-right: 7px;
+    @media screen and (min-width: $smDesktopWidth) {
+      &:hover .header__sublist {
+        display: block;
+      }
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+      &.active .header__sublist {
+        display: block;
+        position: relative;
+        background-color: #f4f4f5;
+        padding-left: 10px;
+        top: 0;
+      }
+    }
+  }
+  &__nav-link {
+    color: $darkShadeColor50;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 8px 7px;
+    cursor: pointer;
+  }
+  &__item-icon {
+    color: $darkShadeColor50;
+    margin-left: 4px;
+    width: 19px;
+    font-size: rem(8px);
+  }
+  &__sublist {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    display: none;
+    z-index: 100;
+  }
+  &__sublist-item {
+    display: block;
+    margin: 0;
+  }
+  &__sigh-in-btn {
+    margin-right: 26px;
+    @media screen and (max-width: $smDesktopWidth) {
+      margin-right: 0;
+    }
+  }
+  &__registration-btn {
+    margin-right: 2px;
+    @media screen and (max-width: $smDesktopWidth) {
+      display: none;
+    }
+  }
+  &__hamburger {
+    outline: none;
+    display: none;
+    background-color: #f4f4f5;
+    @media screen and (max-width: $smDesktopWidth) {
+      display: block;
+    }
+  }
+  &__search-rooms {
+    position: absolute;
+    z-index: 2000;
+    top: calc(100% + 70px);
+    width: 100vw;
+    display: none;
+    &.active {
+      display: flex;
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+     justify-content: center;
+    }
+  }
+  &__registration {
+    position: absolute;
+    z-index: 2000;
+    top: calc(100% + 30px);
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    &.active {
+      display: flex;
+    }
+  }
+  &__sign-in {
+    position: absolute;
+    z-index: 2000;
+    top: calc(100% + 163px);
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    &.active {
+      display: flex;
+    }
+  }
+}

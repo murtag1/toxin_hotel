@@ -1,0 +1,35 @@
+.feedback {
+  color: $darkShadeColor75;
+  &__top, &__bottom {
+    display: flex;
+  }
+  &__top {
+    margin-bottom: 11px;
+  }
+  &__photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+    margin-right: 10px;
+  }
+  &__name {
+    font-family: $mainFont1;
+    font-weight: bold;
+    padding-top: 4px;
+    margin-bottom: 7px;
+  }
+  &__like-button {
+    width: 48px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+  }
+  &__description {
+    flex-shrink: 1000;
+    line-height: 24px;
+  }
+}

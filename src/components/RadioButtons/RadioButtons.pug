@@ -1,0 +1,11 @@
+mixin radioButtons(options)
+  .radio-buttons(class=options.addClass)
+    if (options.title)
+      .radio-buttons__title
+        +title({ content: options.title, tag: 'h3' })
+    if (options.items)
+      each val in options.items
+        label.radio-buttons__item
+          input.radio-buttons__input(type='radio' name=options.name)
+          .radio-buttons__icon
+          .radio-buttons__text= val

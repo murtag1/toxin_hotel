@@ -1,0 +1,40 @@
+.like-button {
+  padding: 0 0 0 3px;
+  width: 37.5px;
+  height: 18px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: rem(10.5px);
+  color: $darkShadeColor25;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  font-family: $mainFont1;
+  &:before {
+    content: '';
+    display: block;
+    background: $darkShadeColor25;
+    border-radius: 25px;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    z-index: -1;
+  }
+  &_active {
+    color: $accentColor1;
+    &:before {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    } 
+  }
+  &__icon {
+    display: block;
+    font-size: rem(8px);
+    margin-right: 5px;
+  }
+}

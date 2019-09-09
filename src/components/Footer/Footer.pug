@@ -1,0 +1,62 @@
+mixin footer()
+  .footer
+    .footer__row.footer__first-row
+      .footer__col.footer__logo-col
+        .footer__logo
+          +logo()
+        .footer__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+      .footer__col.footer__nav-col
+        .footer__col-header Навигация
+          i.icon-chevron-down.footer__down-icon
+        ul.footer__list
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") О нас
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Новости
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Служба поддержки
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Услуги
+      .footer__col.footer__about-us-col
+        .footer__col-header О нас
+          i.icon-chevron-down.footer__down-icon
+        ul.footer__list
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") О сервисе
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Наша команда
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Вакансии
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Инвесторы
+      .footer__col.footer__support-col
+        .footer__col-header Служба поддержки
+          i.icon-chevron-down.footer__down-icon
+        ul.footer__list
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Соглашения
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Сообщества
+          li.footer__list-item
+            a.footer__list-item-link(href="link-mock.html") Связь с нами
+      .footer__col.footer__subscription-col
+        .footer__col-header Подписка
+          i.icon-chevron-down.footer__down-icon
+        .footer__list
+          .footer__subscription Получайте специальные предложения и новости сервиса
+          .footer__subscription-input
+            +textField( {
+              type: 'email',
+              placeholder: 'Email',
+              icon: 'icon-arrow-right',
+              short: true,
+            })
+    .footer__row.footer__second-row
+      .footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
+      .footer__icons
+        a(href="link-mock.html")
+          i.footer__icon.icon-twitter.footer__twitter-icon
+        a(href="link-mock.html")
+          i.footer__icon.icon-facebook
+        a(href="link-mock.html")
+          i.footer__icon.icon-instagram

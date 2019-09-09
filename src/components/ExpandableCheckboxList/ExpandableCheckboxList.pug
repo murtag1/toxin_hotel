@@ -1,0 +1,10 @@
+mixin expCheckboxList(options)
+  .exp-checkbox-list(class=options.addClass)
+    .exp-checkbox-list__button
+      +title({ content: options.title, tag: 'h3'})
+      .exp-checkbox-list__icon-wrap
+        i.exp-checkbox-list__icon(class='icon-chevron-down')
+    .exp-checkbox-list__list
+      +checkboxButtons({
+        items: options.items,
+      })

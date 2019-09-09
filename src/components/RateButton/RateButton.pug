@@ -1,0 +1,8 @@
+mixin rateButton(options)
+  .rate-button
+    - for (let i = 0; i < options.totalNum; i++) {
+      if (i < options.filledNum)
+        i.rate-button__icon(class=options.filledIcon)
+      else 
+        i.rate-button__icon(class=options.icon)
+    - }

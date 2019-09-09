@@ -1,0 +1,26 @@
+mixin searchRooms(options)
+  form.search-rooms(class= options.addClass)
+    .search-rooms__title
+      +title({ content: options.title, tag: 'h1' })
+    .search-rooms__datepicker-wrap
+      +datepickerDropdowns({ numInputs: 2, firstDropdownTitle: 'прибытие', secondDropdownTitle: 'выезд' })
+    .search-rooms__dropdown
+      +dropdown({
+        title: 'гости',
+        type: 'guests',
+        items: ['взрослые', 'дети', 'младенцы'],
+        applyButtonContent: 'применить',
+        cleanButtonContent: 'очистить',
+      })
+    .search-rooms__button
+      +button({
+        src: options.btnSrc,
+        content: 'подобрать номер',
+        fontColor: 'purple',
+        isBorder: true,
+        isBig: true,
+        isBackground: true,
+        isFullWidth: true,
+        isPadding: true,
+        icon: 'icon-arrow-right',
+      })

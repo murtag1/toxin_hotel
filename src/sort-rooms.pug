@@ -1,0 +1,143 @@
+include components/Header/Header.pug
+include components/Footer/Footer.pug
+include components/Logo/Logo.pug
+include components/Button/Button.pug
+include components/TextField/TextField.pug
+include components/Registration/Registration.pug
+include components/SignIn/SignIn.pug
+include components/SearchRooms/SearchRooms.pug
+include components/Title/Title.pug
+include components/Dropdown/Dropdown.pug
+include components/Toggle/Toggle.pug
+include components/Datepicker/Datepicker.pug
+include components/DateDropdown/DateDropdown.pug
+include components/DatepickerDropdowns/DatepickerDropdowns.pug
+include components/RadioButtons/RadioButtons.pug
+include components/Slider/Slider.pug
+include components/Filter/Filter.pug
+include components/CheckboxButtons/CheckboxButtons.pug
+include components/ExpandableCheckboxList/ExpandableCheckboxList.pug
+include components/RoomMainInfo/RoomMainInfo.pug
+include components/RateButton/RateButton.pug
+include components/Pagination/Pagination.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png")
+    link(rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="theme-color" content="#ffffff")
+    title sort rooms
+  body
+    .page-content
+      +header()
+
+      section.sort-rooms
+        .sort-rooms__inner
+          .sort-rooms__left
+            +filter()
+          .sort-rooms__right
+            .sort-rooms__rooms-title
+              +title({ content: 'Номера, которые мы для вас подобрали', tag: 'h1' })
+            .sort-rooms__rooms-wrap
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '9 990',
+                    roomNum: 888,
+                    commentsNum: 145,
+                    lux: true,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg'],
+                    price: '9 990',
+                    roomNum: 840,
+                    commentsNum: 65,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '8 500',
+                    roomNum: 980,
+                    commentsNum: 35,
+                    lux: true,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg'],
+                    price: '7 300',
+                    roomNum: 856,
+                    commentsNum: 19,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '6 000',
+                    roomNum: 740,
+                    commentsNum: 44,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '5 800',
+                    roomNum: 982,
+                    commentsNum: 56,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '8 500',
+                    roomNum: 980,
+                    commentsNum: 35,
+                    lux: true,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '8 500',
+                    roomNum: 980,
+                    commentsNum: 35,
+                    lux: true,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '8 500',
+                    roomNum: 980,
+                    commentsNum: 35,
+                    lux: true,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '8 500',
+                    roomNum: 980,
+                    commentsNum: 35,
+                    lux: true,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '8 500',
+                    roomNum: 980,
+                    commentsNum: 35,
+                    lux: true,
+                  })
+                .sort-rooms__room-item
+                  +roomMainInfo({
+                    imgSrc: ['/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg', '/assets/img/room-img1.jpg', '/assets/img/room-img2.jpg'],
+                    price: '8 500',
+                    roomNum: 980,
+                    commentsNum: 35,
+                    lux: true,
+                  })
+            .sort-rooms__pagination-wrap
+              .sort-rooms__pagination-inner
+                +pagination({ maxNum: 15, description: '1 – 12 из 100+ вариантов аренды', icon: 'icon-arrow-right'})
+    +footer()

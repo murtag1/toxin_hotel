@@ -1,0 +1,60 @@
+mixin header()
+  .header
+    .header__inner
+      .header__search-rooms
+        +searchRooms({ title: 'Найдём номера под ваши пожелания', btnSrc: '/sort-rooms.html' })
+      .header__registration
+        +registration({ title: 'Регистрация аккаунта' })
+      .header__sign-in
+        +signIn({ title: 'Войти' })
+      .header__inner-left
+        button.hamburger.hamburger--squeeze.header__hamburger
+          span.hamburger-box
+            span.hamburger-inner
+        .header__logo
+          +logo()
+      .header__inner-right
+        ul.header__nav
+          li.header__nav-item
+            a.header__nav-link(href="link-mock.html") О нас 
+          li.header__nav-item
+            div.header__nav-link Услуги
+              i.header__item-icon.icon-chevron-down
+            ul.header__sublist
+              li.header__nav-item.header__sublist-item.header__search-room-btn
+                .header__nav-link Поиск комнаты
+              li.header__nav-item.header__sublist-item
+                a.header__nav-link(href="link-mock.html") услуга 2
+              li.header__nav-item.header__sublist-item
+                a.header__nav-link(href="link-mock.html") услуга 3
+          li.header__nav-item
+            a.header__nav-link(href="link-mock.html") Вакансии
+          li.header__nav-item
+            a.header__nav-link(href="link-mock.html") Новости
+          li.header__nav-item
+            div.header__nav-link Соглашения
+              i.header__item-icon.icon-chevron-down
+            ul.header__sublist
+              li.header__nav-item.header__sublist-item
+                a.header__nav-link(href="link-mock.html") соглашение 1
+              li.header__nav-item.header__sublist-item
+                a.header__nav-link(href="link-mock.html") соглашение 2
+              li.header__nav-item.header__sublist-item
+                a.header__nav-link(href="link-mock.html") соглашение 3
+
+        .header__buttons
+          .header__sigh-in-btn
+            +button({
+              content: 'войти',
+              fontColor: 'purple',
+              isBorder: true,
+              isPadding: true,
+              isSmallHeight: true
+            })
+          .header__registration-btn
+            +button({
+              content: 'зарегистрироваться',
+              isPadding: true,
+              isSmallHeight: true,
+              isBackground: true
+            })

@@ -1,0 +1,22 @@
+mixin roomMainInfo(options)
+  .room-main-info(class= options.addClass)
+    .room-main-info__carousel.owl-carousel
+      if (options.imgSrc)
+        each val in options.imgSrc
+          img.room-main-info__carousel-item(src=val, alt='room-img')
+
+    a.room-main-info__content(href="/room-details.html")
+      //- a.room-main-info__link
+      .room-main-info__content-top
+        .room-main-info__room № 
+          span.room-main-info__room-num= options.roomNum
+          if (options.lux)
+            span.room-main-info__lux  люкс
+        .room-main-info__price
+          span.room-main-info__price-num= `${options.price}₽ `
+          | в сутки
+      .room-main-info__content-bottom
+        +rateButton({ totalNum: 5, filledNum: 3, filledIcon: 'icon-star', icon: 'icon-star-border'})
+        .room-main-info__comments
+          span.room-main-info__comments-num= options.commentsNum
+          |  Отзывов
