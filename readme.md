@@ -2,7 +2,7 @@
 
 Верстка сайта отеля с использованием pug и scss  
 
-[Ссылка](https://murtag1.github.io/toxin/)  
+[Ссылка](https://toxin-h.herokuapp.com/)  
 
 ## Установка  
 
